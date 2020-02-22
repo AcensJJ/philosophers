@@ -6,7 +6,7 @@
 #    By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/20 14:37:19 by jacens            #+#    #+#              #
-#    Updated: 2020/02/22 17:12:36 by jacens           ###   ########lyon.fr    #
+#    Updated: 2020/02/22 17:51:34 by jacens           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,4 +35,4 @@ fclean: clean
 
 re : fclean all
 
-.PHONY: all fclean clean re philo_one
+.PHONY: all fclean clean re
