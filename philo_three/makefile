@@ -6,12 +6,12 @@
 #    By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/20 14:37:19 by jacens            #+#    #+#              #
-#    Updated: 2020/02/22 17:51:34 by jacens           ###   ########lyon.fr    #
+#    Updated: 2020/02/22 17:51:40 by jacens           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	philo_two
-SRCS	=	srcs/philo_two.c
+NAME	=	philo_three
+SRCS	=	srcs/philo_three.c
 HEADER  =   includes
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
@@ -19,7 +19,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 LFLAGS  =   -I $(HEADER)
 
-%.o:		%.c $(HEADER)/philo_two.h
+%.o:		%.c $(HEADER)/philo_three.h
 	$(CC) $(CFLAGS) $(LFLAGS) -c $< -o $@
 
 all:		$(NAME)
