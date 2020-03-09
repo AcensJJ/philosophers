@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+         #
+#    By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/11/07 15:34:08 by jdesbord          #+#    #+#              #
-#    Updated: 2020/03/07 19:42:43 by jdesbord         ###   ########lyon.fr    #
+#    Created: 2019/11/07 15:34:08 by jacens            #+#    #+#              #
+#    Updated: 2020/03/09 06:10:10 by jacens           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
