@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 14:23:09 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/27 14:26:08 by jacens           ###   ########lyon.fr   */
+/*   Created: 2019/10/08 13:44:30 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/03/07 05:22:33 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_one.h"
+#include "philo.h"
 
-size_t		ft_strlen(const char *str)
+size_t			ft_strlen(const char *str)
 {
 	size_t		i;
 
@@ -26,7 +26,7 @@ size_t		ft_strlen(const char *str)
 	return (i);
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	int			i;
 	int			sign;

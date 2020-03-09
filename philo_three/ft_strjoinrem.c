@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoinrem.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 14:23:46 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/27 14:26:08 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/06 09:20:04 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/03/07 17:39:19 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_one.h"
+#include "philo.h"
 
 char	*ft_strjoinrem(char const *s1, char const *s2)
 {

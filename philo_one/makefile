@@ -1,40 +1,62 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+         #
+#    By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/02/20 14:37:19 by jacens            #+#    #+#              #
-#    Updated: 2020/02/27 14:25:46 by jacens           ###   ########lyon.fr    #
+#    Created: 2019/11/07 15:34:08 by jdesbord          #+#    #+#              #
+#    Updated: 2020/03/07 19:42:01 by jdesbord         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	philo_one
-SRCS	=	srcs/ft_atoi.c srcs/ft_checkdeath.c srcs/ft_checkeat.c \
-			srcs/ft_checkfork.c srcs/ft_dies.c srcs/ft_parse.c \
-			srcs/ft_sleep.c srcs/ft_strjoinrem.c srcs/main.c
-HEADER  =   includes
-CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror
-OBJS	=	$(SRCS:.c=.o)
 
-LFLAGS  =   -I $(HEADER)
+# **************************************************************************** #
+#                                VARIABLES                                     #
+# **************************************************************************** #
 
-%.o:		%.c $(HEADER)/philo_one.h
-	$(CC) $(CFLAGS) $(LFLAGS) -c $< -o $@
+HEADER		=			philo.h
 
-all:		$(NAME)
+SRC_PATH	=			.
 
-$(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+SRCS_NAME	=			ft_atoi.c ft_checkdeath.c ft_checkeat.c ft_checkfork.c\
+						ft_dies.c ft_parse.c ft_sleep.c ft_strjoinrem.c main.c
+
+OBJS        =			${SRCS:.c=.o}
+
+NAME		=			philo_one
+
+RM			=			rm -f
+
+FLAGS		=			-g3 -fsanitize=address -Wall -Wextra -Werror
+
+SRCS		=			$(addprefix $(SRC_PATH)/,$(SRCS_NAME))
+
+# **************************************************************************** #
+#                                REGLES                                        #
+# **************************************************************************** #
+
+all:                            $(NAME)
+
+bonus: all
+
+%.o: %.c                         $(HEADER)
+						@echo "\033[0;32m[OK] \033[0m \033[0;33m Compiling:\033[0m" $<
+						@gcc $(FLAGS) -I $(HEADER) -c $< -o $@
+
+$(NAME):				$(OBJS) $(HEADER)
+						@gcc $(OBJS) $(FLAGS) -o $(NAME) -lm
+						@echo "\x1b[36m\n[OK] \033[0m \x1b[35m Compiling philo_one\033[0m"				
+
 
 clean:
-	rm -f $(OBJS)
+								@echo "\x1b[36m[OK] \033[0m \x1b[34m Removing ALL File object\033[0m"
+								@$(RM) $(OBJS)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:                         clean
+								@echo "\x1b[36m[OK] \033[0m \x1b[32m All is Removing\033[0m"
+								@$(RM) $(NAME)
 
-re : fclean all
+re:                                fclean all
 
-.PHONY: all fclean clean re
+.PHONY:                         clean fclean

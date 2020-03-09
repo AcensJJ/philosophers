@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jdesbord <jdesbord@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 14:23:50 by jacens            #+#    #+#             */
-/*   Updated: 2020/02/27 14:27:02 by jacens           ###   ########lyon.fr   */
+/*   Created: 2020/02/06 07:19:46 by jdesbord          #+#    #+#             */
+/*   Updated: 2020/03/08 23:22:41 by jdesbord         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_one.h"
+#include "philo.h"
 
 void	*cycle(void *strct)
 {
-	t_philo *philo;
+	t_philo			*philo;
 	struct timeval	start_time;
 
 	philo = (t_philo *)strct;
@@ -23,45 +23,54 @@ void	*cycle(void *strct)
 	philo->lastfood = (start_time.tv_sec) * 1000 + (start_time.tv_usec) / 1000;
 	while (1)
 	{
-		ft_checkfork(philo);
+		if (ft_checkfork(philo))
+			return (NULL);
 	}
 	return (NULL);
 }
 
-void	philo1(int ac, char **av, int i)
+void	initphilo(t_philo **philo, int i, t_file *stats)
 {
-	t_file *stats;
-	t_philo *philo;
-	pthread_t threads[i];
-	int j;
-	int rc;
+	int	j;
 
-	stats = malloc(sizeof(t_file) * 1);
-	if(!(philo = (t_philo *)(malloc(sizeof(t_philo) * i))))
-		return ;
-	if (!ft_parse(ac, av, stats))
-		return ;
 	j = 0;
 	while (j < i)
 	{
-		philo[j].id = j + 1;
-		philo[j].stats = stats;
-		philo[j].nbforks = 0;
-		philo[j].food = 0;
+		(*philo)[j].id = j + 1;
+		(*philo)[j].stats = stats;
+		(*philo)[j].nbforks = 0;
+		(*philo)[j].food = 0;
 		j++;
 	}
+}
+
+int		philo1(int ac, char **av, int i)
+{
+	t_file		*stats;
+	t_philo		*philo;
+	pthread_t	threads[i];
+	int			j;
+	int			rc;
+
+	stats = malloc(sizeof(t_file) * 1);
+	if (!(philo = (t_philo *)(malloc(sizeof(t_philo) * i))))
+		return (1);
+	if (!ft_parse(ac, av, stats))
+		return (1);
+	initphilo(&philo, i, stats);
 	j = 0;
 	while (j < i)
 	{
 		rc = pthread_create(&threads[j], NULL, cycle, &(philo[j]));
 		if (rc)
-		{
-			write(1, "THREAD ERROR\n", 14);
-			exit (-1);
-		}
+			return (write(1, "THREAD ERROR\n", 14));
 		j++;
 	}
-	pthread_exit(NULL);
+	j = -1;
+	while (++j < i)
+		pthread_join(threads[j], NULL);
+	ft_free(&philo);
+	return (1);
 }
 
 int		main(int ac, char **av)
