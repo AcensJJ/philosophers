@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:43:20 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:09:18 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/12 10:29:43 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,7 @@ int		ft_parse(int ac, char **av, t_file *stats)
 	if (!ft_deadsems(stats))
 		return (0);
 	if (ac == 6)
-	{
 		stats->max_food = ft_atoi(av[5]);
-		if (stats->max_food < 1)
-		{
-			write(1, "philosophers start satiated\n", 28);
-			return (0);
-		}
-	}
 	else
 		stats->max_food = -1;
 	return (ft_check(ac, stats));
