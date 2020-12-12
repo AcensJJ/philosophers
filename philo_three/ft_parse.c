@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:43:20 by jacens            #+#    #+#             */
-/*   Updated: 2020/12/12 10:29:43 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/12 11:03:41 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int		ft_deadsems(t_file *stats)
 
 int		ft_parse(int ac, char **av, t_file *stats)
 {
-	stats->option = 0;
 	stats->stop = 0;
 	stats->nb = ft_atoi(av[1]);
 	stats->time_to_die = (long int)ft_atoi(av[2]) * 1000;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:20:07 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:10:45 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/12 11:03:22 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct					s_file
 	int							time_to_eat;
 	int							time_to_sleep;
 	int							max_food;
-	int							option;
 	int							stop;
 	int							*forks;
 	struct timeval				start_time;
