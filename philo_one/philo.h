@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:20:07 by jacens            #+#    #+#             */
-/*   Updated: 2020/12/12 11:03:22 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 15:49:57 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct					s_file
 	int							time_to_eat;
 	int							time_to_sleep;
 	int							max_food;
+	int							**allphilofood;
 	int							stop;
 	int							*forks;
 	struct timeval				start_time;

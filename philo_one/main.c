@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:19:46 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:09:18 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 16:10:07 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,24 @@ void	*cycle(void *strct)
 	return (NULL);
 }
 
-void	initphilo(t_philo **philo, int i, t_file *stats)
+int		initphilo(t_philo **philo, int i, t_file *stats)
 {
 	int	j;
+	int	**allfood;
 
-	j = 0;
-	while (j < i)
+	if (!(allfood = malloc(sizeof(int *) * i)))
+		return (1);
+	stats->allphilofood = allfood;
+	j = -1;
+	while (++j < i)
 	{
 		(*philo)[j].id = j + 1;
 		(*philo)[j].stats = stats;
 		(*philo)[j].nbforks = 0;
 		(*philo)[j].food = 0;
-		j++;
+		allfood[j] = &(*philo)[j].food;
 	}
+	return (0);
 }
 
 int		philo1(int ac, char **av, int i)
@@ -57,20 +62,19 @@ int		philo1(int ac, char **av, int i)
 		return (1);
 	if (!ft_parse(ac, av, stats))
 		return (1);
-	initphilo(&philo, i, stats);
-	j = 0;
-	while (j < i)
+	if (initphilo(&philo, i, stats))
+		return (ft_free(&philo));
+	j = -1;
+	while (++j < i)
 	{
 		rc = pthread_create(&threads[j], NULL, cycle, &(philo[j]));
 		if (rc)
 			return (write(1, "THREAD ERROR\n", 14));
-		j++;
 	}
 	j = -1;
 	while (++j < i)
 		pthread_join(threads[j], NULL);
-	ft_free(&philo);
-	return (1);
+	return (ft_free(&philo));
 }
 
 int		main(int ac, char **av)

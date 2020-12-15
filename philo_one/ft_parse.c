@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:43:20 by jacens            #+#    #+#             */
-/*   Updated: 2020/12/12 11:03:09 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 15:49:28 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		ft_check(int ac, t_file *stats)
 int		ft_parse2(char **av, t_file *stats)
 {
 	stats->stop = 0;
+	stats->allphilofood = 0;
 	stats->nb = ft_atoi(av[1]);
 	stats->time_to_die = (long int)ft_atoi(av[2]) * 1000;
 	stats->time_to_eat = ft_atoi(av[3]) * 1000;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkeat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 18:38:36 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:09:18 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 16:09:21 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,20 @@ int			freeforks(t_philo *philo)
 	return (0);
 }
 
+static int	ft_all_philo_eat(t_philo *philo)
+{
+	int	i;
+
+	i = -1;
+	while (++i < philo->stats->nb)
+		if (*(philo->stats->allphilofood[i]) < philo->stats->max_food)
+			return (0);
+	return (1);
+}
+
 static int	ft_check_val_more(t_philo *philo)
 {
-	if (philo->stats->max_food > 0 && philo->food >= philo->stats->max_food)
+	if (philo->stats->max_food > 0 && ft_all_philo_eat(philo))
 	{
 		pthread_mutex_lock(&philo->stats->writemutex);
 		if (philo->stats->stop == 1)
