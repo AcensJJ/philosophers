@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:19:46 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:09:18 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 10:26:09 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,13 @@ t_philo	*initphilo(int i, t_file *stats)
 
 	if (!(philo = (t_philo *)(malloc(sizeof(t_philo) * i))))
 		return (NULL);
-	j = 0;
-	while (j < i)
+	j = -1;
+	while (++j < i)
 	{
 		philo[j].id = j + 1;
 		philo[j].stats = stats;
 		philo[j].nbforks = 0;
 		philo[j].food = 0;
-		j++;
 	}
 	return (philo);
 }
@@ -56,24 +55,20 @@ int		threading(t_philo *philo, int i, t_parent papa)
 	int			rc;
 	pthread_t	threads[i + 1];
 
-	j = 0;
-	while (j < i)
+	j = -1;
+	while (++j < i)
 	{
 		rc = pthread_create(&threads[j], NULL, cycle, &(philo[j]));
 		if (rc)
 			return (write(1, "THREAD ERROR\n", 14));
-		j++;
 	}
 	rc = pthread_create(&threads[i], NULL, parent, &papa);
 	if (rc)
 		return (write(1, "THREAD ERROR\n", 14));
-	j = 0;
 	pthread_join(threads[i], NULL);
-	while (j < i)
-	{
+	j = -1;
+	while (++j < i)
 		pthread_join(threads[j], NULL);
-		j++;
-	}
 	return (0);
 }
 

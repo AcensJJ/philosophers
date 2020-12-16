@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:19:46 by jacens            #+#    #+#             */
-/*   Updated: 2020/12/15 16:10:07 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 10:24:45 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ void	*cycle(void *strct)
 int		initphilo(t_philo **philo, int i, t_file *stats)
 {
 	int	j;
-	int	**allfood;
 
-	if (!(allfood = malloc(sizeof(int *) * i)))
+	j = -1;
+	while (++j < i)
+		(*philo)[j].stats = stats;
+	if (!(stats->allphilofood = malloc(sizeof(int *) * i)))
 		return (1);
-	stats->allphilofood = allfood;
 	j = -1;
 	while (++j < i)
 	{
@@ -44,7 +45,7 @@ int		initphilo(t_philo **philo, int i, t_file *stats)
 		(*philo)[j].stats = stats;
 		(*philo)[j].nbforks = 0;
 		(*philo)[j].food = 0;
-		allfood[j] = &(*philo)[j].food;
+		stats->allphilofood[j] = &(*philo)[j].food;
 	}
 	return (0);
 }

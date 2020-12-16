@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 08:38:36 by jacens            #+#    #+#             */
-/*   Updated: 2020/12/15 15:48:47 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 10:04:43 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_free(t_philo **philo)
 {
+	if ((*philo)[0].stats->allphilofood)
+		free((*philo)[0].stats->allphilofood);
 	free((*philo)[0].stats->forks);
 	free((*philo)[0].stats);
 	free(*philo);

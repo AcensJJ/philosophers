@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parent.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 13:57:45 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:09:18 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 11:04:08 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,24 @@ void			addmutexes(t_philo *philo)
 {
 	int		i;
 
-	i = 0;
+	i = -1;
 	sem_post(philo->stats->writemutex);
-	while (i < philo->stats->nb)
-	{
+	while (++i < philo->stats->nb)
 		sem_post(philo->stats->forkmutex);
-		i++;
-	}
 }
 
-int				ft_checkdeath(t_philo *philo)
+static int		ft_all_philo_eat(t_philo *philo, t_philo **philos)
+{
+	int	i;
+
+	i = -1;
+	while (++i < philo->stats->nb)
+		if ((*philos)[i].food < philo->stats->max_food)
+			return (0);
+	return (1);
+}
+
+int				ft_checkdeath(t_philo *philo, t_philo **philos)
 {
 	struct timeval	time;
 
@@ -37,8 +45,7 @@ int				ft_checkdeath(t_philo *philo)
 		addmutexes(philo);
 		return (1);
 	}
-	else if (philo->stats->max_food > 0 && philo->food >=
-		philo->stats->max_food)
+	else if (philo->stats->max_food > 0 && ft_all_philo_eat(philo, philos))
 	{
 		sem_wait(philo->stats->writemutex);
 		if (philo->stats->stop == 1)
@@ -93,22 +100,10 @@ void			*parent(void *data)
 	usleep(1000);
 	while (1)
 	{
-		i = 0;
-		while (i < (*philo)[0].stats->nb)
-		{
-			if (ft_checkdeath(&((*philo)[i])))
-			{
+		i = -1;
+		while (++i < (*philo)[0].stats->nb)
+			if (ft_checkdeath(&((*philo)[i]), philo))
 				return (NULL);
-			}
-			i++;
-		}
 	}
 	return (NULL);
-}
-
-int				ft_free(t_philo **philo)
-{
-	free((*philo)[0].stats);
-	free(*philo);
-	return (1);
 }

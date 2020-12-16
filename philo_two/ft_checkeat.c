@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkeat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 18:38:36 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:09:18 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 10:33:44 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int		ft_free(t_philo **philo)
+{
+	free((*philo)[0].stats);
+	free(*philo);
+	return (1);
+}
 
 int		freeforks(t_philo *philo)
 {
