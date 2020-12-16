@@ -6,7 +6,7 @@
 /*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 07:20:07 by jacens            #+#    #+#             */
-/*   Updated: 2020/12/12 11:03:30 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 11:09:53 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int								ft_dies(t_philo *philo);
 char							*ft_strjoinrem(char const *s1, char const *s2);
 int								ft_checkfork(t_philo *philo);
 int								ft_checkeat(t_philo *philo);
-int								ft_checkdeath(t_philo *philo);
+int								ft_checkdeath(t_philo *philo, t_philo **philos);
 void							*parent(void *data);
 void							*checker(void *data);
 int								killforks(t_philo *philo);

@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkeat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacens <jacens@student.le-101.fr>          +#+  +:+       +#+        */
+/*   By: jacens <jacens@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 18:38:36 by jacens            #+#    #+#             */
-/*   Updated: 2020/03/09 06:09:18 by jacens           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 11:12:12 by jacens           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int		killforks(t_philo *philo)
+{
+	int i;
+
+	i = -1;
+	while (++i < philo->stats->nb)
+	{
+		kill(philo->stats->forks[i], SIGKILL);
+		sem_post(philo->stats->tabwmutex[i]);
+	}
+	return (1);
+}
 
 int		freeforks(t_philo *philo)
 {
