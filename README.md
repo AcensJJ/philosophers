@@ -1,6 +1,6 @@
 # philosophers
 
-![Screenshot 2020-10-21_19-05-33-326](https://user-images.githubusercontent.com/45235527/96754056-0d781c00-13d1-11eb-8784-218becc41a82.png)
+ <img src="https://user-images.githubusercontent.com/45235527/96753610-698e7080-13d0-11eb-9461-d3351c9208d7.png" width="250" height="200" />
 
 <strong>Description</strong>
 
