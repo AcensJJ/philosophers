@@ -65,7 +65,7 @@ l’affichage de sa mort.
 
 ## Contraintes
 
-![1Capture](https://user-images.githubusercontent.com/45235527/102659664-12134380-417a-11eb-9b55-7861a10e338d.PNG)
+![Sujet - Philo 1](https://user-images.githubusercontent.com/45235527/102659664-12134380-417a-11eb-9b55-7861a10e338d.PNG)
 
 Dans cette version, les règles supplémentaires seront :
 
@@ -76,7 +76,7 @@ devez protéger l’état des fourchettes à l’aide de mutex.
 - Vous devez attacher chaque philosophe à un thread différent.
 
 
-![Capture](https://user-images.githubusercontent.com/45235527/102659873-69b1af00-417a-11eb-9b36-ed62e71d3654.PNG)
+![Sujet - Philo 2](https://user-images.githubusercontent.com/45235527/102659873-69b1af00-417a-11eb-9b36-ed62e71d3654.PNG)
 
 Dans cette version, les règles supplémentaires seront :
 
@@ -85,7 +85,7 @@ Dans cette version, les règles supplémentaires seront :
 - Vous devez attacher chaque philosophe à un thread différent.
 
 
-![3Capture](https://user-images.githubusercontent.com/45235527/102659659-10e21680-417a-11eb-9d14-6c2f3b05c205.PNG)
+![Sujet - Philo 3](https://user-images.githubusercontent.com/45235527/102659659-10e21680-417a-11eb-9d14-6c2f3b05c205.PNG)
 
 Dans cette version, les règles supplémentaires seront :
 
