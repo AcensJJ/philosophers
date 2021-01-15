@@ -97,4 +97,10 @@ ne devrait pas être un philosophe.
 
 # Resultat 
 
-![philo1](https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif) ![philo2](https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif) ![philo3](https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif)
+<p align="center" width="100%">
+   <img src="https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif" width="60% height="50%" />
+  
+   <img src="https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif" width="60" height="50%" />
+   
+   <img src="https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif" width="60" height="50%" />
+</p>
