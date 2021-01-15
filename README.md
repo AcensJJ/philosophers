@@ -8,6 +8,7 @@ Ce projet est une introduction au bases du threading de processus, et comment tr
 Vous apprendrez comment faire des threads.
 Vous découvrirez les mutex, les semaphores, et la mémoire partagée.
 
+<img src="https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif" width="33%" height="33%" /> <img src="https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif" width="33%" height="33%" /> <img src="https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif" width="33%" height="33%" />
 
 # Partie obligatoire
 
@@ -93,3 +94,7 @@ Dans cette version, les règles supplémentaires seront :
 - Elles n’ont pas d’état spécifique en mémoire, mais le nombre de fourchettes disponibles est représenté par un semaphore
 - Chaque philosophe est représenté par un processus différent. Le processus principal
 ne devrait pas être un philosophe.
+
+# Resultat 
+
+![philo1](https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif) ![philo2](https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif) ![philo3](https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif)
