@@ -1,6 +1,6 @@
 # philosophers
 
-<img src="https://user-images.githubusercontent.com/45235527/96753610-698e7080-13d0-11eb-9461-d3351c9208d7.png" width="250" height="200" />
+<img alt="Note" src="https://user-images.githubusercontent.com/45235527/96753610-698e7080-13d0-11eb-9461-d3351c9208d7.png" width="250" height="200" />
 
 <strong>Description</strong>
 
@@ -10,7 +10,7 @@ Vous découvrirez les mutex, les semaphores, et la mémoire partagée.
 
 <p align="center" width="100%">
   
-<img src="https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif" width="33%" height="33%" /> <img src="https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif" width="33%" height="33%" /> <img src="https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif" width="33%" height="33%" />
+<img alt="Philo1" src="https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif" width="33%" height="33%" /> <img alt="Philo2" src="https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif" width="33%" height="33%" /> <img alt="Philo3" src="https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif" width="33%" height="33%" />
 
 </p>
 
@@ -103,9 +103,9 @@ ne devrait pas être un philosophe.
 # Resultat 
 
 <p align="center" width="100%">
-   <img src="https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif" width="60% height="50%" />
+   <img alt="Philo1 grand" src="https://user-images.githubusercontent.com/45235527/104717704-ff187280-5729-11eb-940e-f52e2ed31e46.gif" width="60%" height="50%" />
   
-   <img src="https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif" width="60%" height="50%" />
+   <img alt="Philo2 grand" src="https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif" width="60%" height="50%" />
    
-   <img src="https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif" width="60%" height="50%" />
+   <img alt="Philo3 grand" src="https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif" width="60%" height="50%" />
 </p>
