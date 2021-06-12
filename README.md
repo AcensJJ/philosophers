@@ -1,6 +1,7 @@
 <p align="center">
     <img alt="42-lyon" src="https://user-images.githubusercontent.com/45235527/106354618-6ec65a00-62f3-11eb-8688-ba9e0f4e77de.jpg" />
 </p>
+
 # philosophers
 
 <img alt="Note" src="https://user-images.githubusercontent.com/45235527/96753610-698e7080-13d0-11eb-9461-d3351c9208d7.png" width="250" height="200" />
@@ -16,7 +17,6 @@ Vous découvrirez les mutex, les semaphores, et la mémoire partagée.
   <img alt="Philo2" src="https://user-images.githubusercontent.com/45235527/104717692-f9229180-5729-11eb-9e58-edca3bea9a58.gif" width="33%" height="33%" />
   <img alt="Philo3" src="https://user-images.githubusercontent.com/45235527/104717707-ffb10900-5729-11eb-86c0-8fb81f8d2147.gif" width="33%" height="33%" />
 </p>
-
 
 # Partie obligatoire
 
@@ -71,7 +71,6 @@ philosophes sont N sont à coté de leur N + 1 et N - 1.
 l’affichage de sa mort.
 - Les philosophes doivent éviter de mourir !
 
-
 ## Contraintes
 
 ![Sujet - Philo 1](https://user-images.githubusercontent.com/45235527/102659664-12134380-417a-11eb-9b55-7861a10e338d.PNG)
@@ -84,7 +83,6 @@ gauche et a droite de chaque philosophe.
 devez protéger l’état des fourchettes à l’aide de mutex.
 - Vous devez attacher chaque philosophe à un thread différent.
 
-
 ![Sujet - Philo 2](https://user-images.githubusercontent.com/45235527/102659873-69b1af00-417a-11eb-9b36-ed62e71d3654.PNG)
 
 ### Dans cette version, les règles supplémentaires seront :
@@ -92,7 +90,6 @@ devez protéger l’état des fourchettes à l’aide de mutex.
 - Toutes les fourchettes sont au milieu de la table.
 - Elles n’ont pas d’état spécifique en mémoire, mais le nombre de fourchettes disponibles est représenté par un semaphore
 - Vous devez attacher chaque philosophe à un thread différent.
-
 
 ![Sujet - Philo 3](https://user-images.githubusercontent.com/45235527/102659659-10e21680-417a-11eb-9d14-6c2f3b05c205.PNG)
 
